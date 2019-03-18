@@ -43,9 +43,9 @@ module.exports = {
   commands: {
     send: {
       desc: 'Send Gjallardoodles to someone else!',
-      usage: '>send @user',
+      usage: 'send @user',
       execute (client, msg, param, db) {
-        if(moment().month() != 11) return msg.channel.send('The dawning has gone by. The oven fire is down until further notice')
+        if (moment().month() !== 11) return msg.channel.send('The dawning has gone by. The oven fire is down until further notice')
         if (msg.mentions.members.size === 0) {
           return msg.channel.send(
             'You need to mention who you want to send Gjllardoodles to!'
@@ -119,7 +119,6 @@ module.exports = {
     },
     doodles: {
       desc: "Check how many Gjllardoodles you've received and sent",
-      usage: '>doodles',
       execute (client, msg, param, db) {
         check(db, msg.author.id)
         let info = db
